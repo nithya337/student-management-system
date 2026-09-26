@@ -14,7 +14,7 @@ function App() {
 
   const fetchStudents = () => {
     axios
-      .get("http://localhost:5000/students")
+      .get("https://student-management-backend-w4sm.onrender.com/students")
       .then((response) => {
         setStudents(response.data);
       })
@@ -31,7 +31,7 @@ function App() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:5000/students", {
+     .post("https://student-management-backend-w4sm.onrender.com/students", {
         name: name,
         email: email,
         age: age,
@@ -53,7 +53,7 @@ function App() {
   const deleteStudent = (id) => {
     if (window.confirm("Are you sure you want to delete this student?")) {
       axios
-        .delete(`http://localhost:5000/students/${id}`)
+       .delete(`https://student-management-backend-w4sm.onrender.com/students/${id}`)
         .then((response) => {
           alert(response.data.message);
           fetchStudents();
@@ -76,7 +76,7 @@ function App() {
     event.preventDefault();
 
     axios
-      .put(`http://localhost:5000/students/${editingId}`, {
+      .put(`https://student-management-backend-w4sm.onrender.com/students/${editingId}`, {
         name: name,
         email: email,
         age: age,
